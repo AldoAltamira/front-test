@@ -1,0 +1,32 @@
+<section>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 flex class="md-flex">
+				Inicio de sesión
+			</h2>
+		</div>
+	</md-toolbar>
+	<md-content flex layout-padding id="popupContainer">
+		<form name="loginForm" data-ng-submit="signin(loginForm.$valid)" autocomplete="off">
+			<md-input-container class="md-block">
+				<label>Correo electrónico</label>
+        <input type="email" id="email" name="email" data-ng-model="credentials.email" required />
+        <div ng-messages="loginForm.email.$error">
+        	<div ng-message="required">Email requerido.</div>
+          <div ng-message="email">Correo electrónico inválido</div>
+        </div>
+      </md-input-container>
+
+			<md-input-container class="md-block">
+				<label>Contraseña</label>
+        <input type="password" id="password" name="password" data-ng-model="credentials.password" required />
+        <div ng-messages="loginForm.password.$error">
+        	<div ng-message="required">Contraseña requerida.</div>
+        </div>
+      </md-input-container>
+
+			<md-button type="submit" class="md-primary">Iniciar sesión</md-button>
+			<md-button href="/#!/signup" class="md-primary">Registrarse</md-button>
+		</form>
+	</md-content>
+</section>

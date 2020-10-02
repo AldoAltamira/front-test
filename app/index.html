@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en" ng-app="frontTest">
+  <head>
+    <meta charset="utf-8">
+    <title>Front-End</title>
+    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="app.css"/>
+    <link rel="stylesheet" href="lib/angular-material/angular-material.min.css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="lib/jquery/dist/jquery.js"></script>
+    <script src="lib/angular/angular.js"></script>
+    <script src="lib/angular-animate/angular-animate.js"></script>
+    <script src="lib/angular-resource/angular-resource.js"></script>
+    <script src="lib/angular-route/angular-route.js"></script>
+    <script src="lib/angular-material/angular-material.min.js"></script>
+    <script src="lib/angular-aria/angular-aria.min.js"></script>
+    <script src="app.module.js"></script>
+    <script src="app.config.js"></script>
+    <script src="core/core.module.js"></script>
+    <script src="users/users.module.js"></script>
+    <script src="users/config/users.component.js"></script>
+    <script src="users/controllers/authentication.controller.js"></script>
+    <script src="users/controllers/users.controller.js"></script>
+    <script src="users/services/authentication.service.js"></script>
+  </head>
+  <body>
+
+    <div class="view-container">
+      <div ng-view class="view-frame"></div>
+    </div>
+
+  </body>
+</html>

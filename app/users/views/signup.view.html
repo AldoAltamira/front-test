@@ -1,0 +1,55 @@
+<section>
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 flex class="md-flex">
+				Registro
+			</h2>
+		</div>
+	</md-toolbar>
+	<md-content flex layout-padding id="popupContainer">
+		<form name="signinForm" data-ng-submit="signup(signinForm.$valid)" autocomplete="off">
+			<md-input-container class="md-block">
+				<label>Nombre</label>
+        <input type="text" id="name" name="name" data-ng-model="user.name" required />
+        <div ng-messages="signinForm.name.$error">
+        	<div ng-message="required">Nombre requerido.</div>
+        </div>
+      </md-input-container>
+			<md-input-container class="md-block">
+				<label>Correo electrónico</label>
+        <input type="email" id="email" name="email" data-ng-model="user.email" required />
+        <div ng-messages="signinForm.email.$error">
+        	<div ng-message="required">Email requerido.</div>
+          <div ng-message="email">Correo electrónico inválido</div>
+        </div>
+      </md-input-container>
+			<md-input-container class="md-block">
+				<label>Contraseña</label>
+        <input type="password" id="password" name="password" data-ng-model="user.password" required />
+        <div ng-messages="signinForm.password.$error">
+        	<div ng-message="required">Contraseña requerida.</div>
+        </div>
+      </md-input-container>
+			<md-input-container class="md-block">
+				<label>Telefono</label>
+        <input type="text" id="phone" name="phone" data-ng-model="user.phone" />
+      </md-input-container>
+			<md-input-container class="md-block">
+				<label>Edad</label>
+        <input type="number" id="age" name="age" data-ng-model="user.age" />
+      </md-input-container>
+			<md-input-container class="md-block">
+				<label>Pasatiempo</label>
+        <input type="text" id="hobby" name="hobby" data-ng-model="user.hobby" />
+      </md-input-container>
+			<label>Genero</label>
+			<md-radio-group ng-model="user.gender" aria-labelledby="gender">
+	      <md-radio-button value="Male" class="md-primary">Hombre</md-radio-button>
+	      <md-radio-button value="Female">Mujer</md-radio-button>
+	    </md-radio-group>
+
+			<md-button type="submit" class="md-primary">Registrarse</md-button>
+			<md-button href="/#!/login" class="md-primary">Cancelar</md-button>
+		</form>
+	</md-content>
+</section>

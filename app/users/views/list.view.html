@@ -1,0 +1,53 @@
+<section ng-init="getList()">
+	<md-toolbar>
+		<div class="md-toolbar-tools">
+			<h2 flex class="md-flex">
+				Lista de usuarios
+			</h2>
+			<md-button class="md-icon-button" href='/#!/customlist' aria-label="Recover password">
+				<md-tooltip>Busqueda personalizada</md-tooltip>
+				<md-icon md-font-set="material-icons">flash_on</md-icon>
+			</md-button>
+			<md-button class="md-icon-button" ng-click="logout()" aria-label="Recover password">
+				<md-tooltip>Cerrar Sesión</md-tooltip>
+				<md-icon md-font-set="material-icons">sensor_door</md-icon>
+			</md-button>
+		</div>
+	</md-toolbar>
+	<md-content flex layout-padding id="popupContainer">
+		<div layout="row">
+			<!-- <md-input-container class="md-block" flex>
+				<md-icon md-font-set="material-icons">search</md-icon>
+	      <input type="text" name="text" data-ng-model="search" />
+	    </md-input-container> -->
+			<md-input-container class="md-block" flex>
+	      <input type="text" name="text" data-ng-model="customSearchTxt" />
+	    </md-input-container>
+			<md-button flex=0.1 class="md-icon-button" ng-click="getList(customSearchTxt)">
+				<md-icon md-font-set="material-icons">search</md-icon>
+			</md-button>
+		</div>
+		<md-list>
+			<md-list-item layout="row">
+				<h3 flex>Nombre</h3>
+	      <h3 flex>Teléfono</h3>
+				<h3 flex>Edad</h3>
+	      <h3 flex>Género</h3>
+				<h3 flex>Pasatiempo</h3>
+				<h3 flex>Fecha de creación</h3>
+	      <h3 flex>Eliminar</h3>
+		  </md-list-item>
+		  <md-list-item layout="row" ng-repeat="item in users | filter:search">
+				<p class="centerText" flex>{{item.name}}</p>
+				<p flex>{{item.phone}}</p>
+				<p flex>{{item.age}} {{item.age ? 'Años' : ''}}</p>
+				<p flex>{{item.gender === 'Male' ? 'Hombre' : 'Mujer'}}</p>
+				<p flex>{{item.hobby}}</p>
+	      <p flex>{{item.createdDate | date : format : shortDate}}</p>
+				<md-button flex class="md-icon-button" ng-click="delete(item._id)">
+          <md-icon md-font-set="material-icons">delete</md-icon>
+        </md-button>
+		  </md-list-item>
+		</md-list>
+	</md-content>
+</section>
