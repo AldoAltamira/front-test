@@ -38,7 +38,6 @@
 			      <h3 flex>Género</h3>
 						<h3 flex>Pasatiempo</h3>
 						<h3 flex>Fecha de creación</h3>
-			      <h3 flex>Eliminar</h3>
 				  </md-list-item>
 				  <md-list-item layout="row" ng-repeat="item in customUser.users | filter:customUser.search">
 						<p class="centerText" flex>{{item.name}}</p>
@@ -47,9 +46,6 @@
 						<p flex>{{item.gender === 'Male' ? 'Hombre' : 'Mujer'}}</p>
 						<p flex>{{item.hobby}}</p>
 			      <p flex>{{item.createdDate | date : format : shortDate}}</p>
-						<md-button flex class="md-icon-button" ng-click="delete(item._id)">
-		          <md-icon md-font-set="material-icons">delete</md-icon>
-		        </md-button>
 				  </md-list-item>
 				</md-list>
 			</md-content>
